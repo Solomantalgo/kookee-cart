@@ -1,0 +1,196 @@
+/* ========================================================================= */
+/* 1. Global Definitions (Root Variables & Default Styles) */
+/* ========================================================================= */
+
+:root {
+  /* --- Color Palette from React Component --- */
+  --primary-color: #007bff; /* PRIMARY_COLOR */
+  --accent-color: #28a745; /* ACCENT_COLOR */
+  --danger-color: #dc3545; /* DANGER_COLOR */
+  --background-color: #f8f9fa; /* BACKGROUND_COLOR */
+  --card-background: #ffffff; /* CARD_BACKGROUND */
+  --text-color: #343a40; /* TEXT_COLOR */
+  --light-text-color: #6c757d; /* LIGHT_TEXT_COLOR */
+  --shadow-color: rgba(0, 0, 0, 0.08);
+
+  /* --- Default Font & Scheme --- */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--text-color); /* Updated to use primary text color */
+  background-color: var(--background-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2; /* Can keep the default hover or change to a darker primary */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--background-color); /* Using defined variable */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Base button style (mostly overwritten by specific classes in the app) */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white; /* Default text color for base button */
+  cursor: pointer;
+  transition: border-color 0.25s;
+  outline: none;
+}
+button:hover {
+  border-color: #646cff;
+}
+
+/* ========================================================================= */
+/* 2. Component/Utility Classes (Matching Inline Styles) */
+/* ========================================================================= */
+
+/* --- Product Card Styles --- */
+
+.product-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--card-background);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  width: 100%;
+  max-width: 220px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card-image-container {
+  width: 100%;
+  height: 150px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-card-details {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-card h3 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.product-card p {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  color: var(--light-text-color);
+  flex-grow: 1;
+}
+
+.product-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* --- Cart Button Group Styles (Inside Card/Modal) --- */
+
+.qty-control-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  transition: background-color 0.2s;
+}
+
+/* Specific button variants */
+
+.btn-add {
+  background: var(--accent-color);
+  color: white;
+}
+
+.btn-remove {
+  background: var(--danger-color);
+  color: white;
+}
+
+.btn-remove:disabled {
+  background: #e9ecef;
+  color: var(--light-text-color);
+  cursor: not-allowed;
+}
+
+.qty-display {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 15px;
+}
+
+/* ========================================================================= */
+/* 3. Media Queries (Dark Mode) */
+/* ========================================================================= */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: var(--background-color);
+  }
+  a:hover {
+    color: #747bff;
+  }
+  /* Note: Removed the generic button style override since all app buttons are now styled with specific classes */
+}

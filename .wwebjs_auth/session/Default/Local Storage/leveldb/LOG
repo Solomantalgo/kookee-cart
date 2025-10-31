@@ -1,0 +1,6 @@
+2025/10/31-08:56:34.423 2fe0 Reusing MANIFEST C:\Solomon\Projects\Clients\Kookee\KookeeCart\product-catalog\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2025/10/31-08:56:34.446 2fe0 Recovering log #23
+2025/10/31-08:56:34.447 2fe0 Reusing old log C:\Solomon\Projects\Clients\Kookee\KookeeCart\product-catalog\.wwebjs_auth\session\Default\Local Storage\leveldb/000023.log 
+2025/10/31-10:36:51.162 5744 Level-0 table #27: started
+2025/10/31-10:36:51.178 5744 Level-0 table #27: 14123 bytes OK
+2025/10/31-10:36:51.181 5744 Delete type=0 #23
